@@ -1,0 +1,12 @@
+{
+  "name": "trailweather-huizhou",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "build:weather": "node scripts/build-static-weather.mjs",
+    "build:site": "node scripts/prepare-site.mjs",
+    "build": "npm run build:weather && npm run build:site"
+  }
+}

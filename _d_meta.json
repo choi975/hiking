@@ -1,0 +1,51 @@
+{
+  "type": "design",
+  "designSystems": [],
+  "primaryDesignSystem": null,
+  "assets": {
+    "山候 · 徒步天气研判台": {
+      "versions": [
+        {
+          "path": "index.html",
+          "createdAt": "2026-10-21T04:16:40.819Z",
+          "status": "needs-review",
+          "subtitle": "精简可读界面、可折叠地点栏、19 源天气对比与公司出发时长",
+          "viewport": {
+            "width": 1900,
+            "height": 1000
+          }
+        }
+      ]
+    },
+    "山候 · 视觉方向提案": {
+      "versions": [
+        {
+          "path": "Style Lab.html",
+          "createdAt": "2026-10-21T06:21:12.078Z",
+          "status": "approved",
+          "subtitle": "A 晴空 / B 测站 / C 风物，三套高保真界面方向",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          }
+        }
+      ]
+    },
+    "山候 · 免费 Key 指南": {
+      "versions": [
+        {
+          "path": "Free Key Guide.html",
+          "createdAt": "2026-10-21T07:08:56.153Z",
+          "status": "needs-review",
+          "subtitle": "长期免费额度说明与 Key 获取步骤；心知天气使用私钥 key",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        }
+      ]
+    }
+  },
+  "createdAt": "2026-10-21T04:16:40.820Z",
+  "updatedAt": "2026-10-21T16:36:37.808Z"
+}

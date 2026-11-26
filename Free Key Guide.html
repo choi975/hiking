@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f4f8fc">
+    <title>免费天气 Key 获取指南 · 山候</title>
+    <link rel="stylesheet" href="free-key-guide.css?v=2">
+  </head>
+  <body>
+    <header class="guide-topbar">
+      <a class="guide-brand" href="index.html" aria-label="返回山候">
+        <span class="guide-mark" aria-hidden="true"></span>
+        <span><strong>山候</strong><small>免费天气 Key 指南</small></span>
+      </a>
+      <a class="back-link" href="index.html">返回天气工具</a>
+    </header>
+
+    <main class="guide-main">
+      <section class="guide-hero">
+        <p class="guide-eyebrow">FREE API KEYS · 2026-10-21</p>
+        <h1>只申请免费的 Key。</h1>
+        <p class="guide-lede">需要账号可以，需要付款不行。下面四个平台都提供明确的长期免费额度；推荐先申请前两个，拿到未来 7 天预报对照。</p>
+        <div class="safety-banner">
+          <strong>不要把 Key 发到聊天里。</strong>
+          <span>打开项目里的 <code>.env</code>，把 Key 写在等号后面。浏览器和聊天界面都不会看到它。</span>
+        </div>
+        <div class="horizon-banner">
+          <strong>“未来 7 天 / 未来 3 天”不是免费截止时间。</strong>
+          <span>它表示每次查询时最多能看到未来几天的预报。免费账户和每日 / 每月额度会继续有效；过了这个天数并不会失去免费资格。</span>
+        </div>
+      </section>
+
+      <section class="provider-guide-grid">
+        <article class="key-card key-card-primary">
+          <div class="key-card-head">
+            <span class="rank">01 · 首选</span>
+            <span class="free-badge">无需信用卡</span>
+          </div>
+          <h2>Visual Crossing</h2>
+          <p class="key-card-summary">免费额度 1,000 weather records/天，可请求未来 7 天，最适合作为第二平台的完整对照。</p>
+          <dl class="key-facts">
+            <div><dt>费用</dt><dd>$0 / 天</dd></div>
+            <div><dt>单次预报范围</dt><dd>未来 7 天</dd></div>
+            <div><dt>字段</dt><dd>温度 / 降雨 / 风</dd></div>
+          </dl>
+          <ol class="steps">
+            <li>打开 Visual Crossing 免费注册页。</li>
+            <li>用邮箱创建账号并完成邮箱验证。</li>
+            <li>登录后在 Account 页面找到 <b>API Key</b>。</li>
+            <li>写入 <code>VISUAL_CROSSING_KEY=你的Key</code>。</li>
+          </ol>
+          <a class="key-link" href="https://www.visualcrossing.com/sign-up" target="_blank" rel="noreferrer">去获取 Visual Crossing Key</a>
+        </article>
+
+        <article class="key-card key-card-primary">
+          <div class="key-card-head">
+            <span class="rank">02 · 推荐</span>
+            <span class="free-badge">免费账户</span>
+          </div>
+          <h2>Weatherbit</h2>
+          <p class="key-card-summary">免费计划每天 50 次请求，提供 7 天逐日预报，限非商业用途。工具已加 10 分钟缓存，日常查看足够。</p>
+          <dl class="key-facts">
+            <div><dt>费用</dt><dd>$0</dd></div>
+            <div><dt>单次预报范围</dt><dd>未来 7 天</dd></div>
+            <div><dt>限额</dt><dd>50 次 / 天</dd></div>
+          </dl>
+          <ol class="steps">
+            <li>打开 Weatherbit 免费注册页。</li>
+            <li>注册并验证邮箱。</li>
+            <li>登录 Dashboard，复制 <b>API Key</b>。</li>
+            <li>写入 <code>WEATHERBIT_KEY=你的Key</code>。</li>
+          </ol>
+          <a class="key-link" href="https://www.weatherbit.io/account/create" target="_blank" rel="noreferrer">去获取 Weatherbit Key</a>
+        </article>
+
+        <article class="key-card">
+          <div class="key-card-head">
+            <span class="rank">03 · 国内补充</span>
+            <span class="free-badge">永久免费版</span>
+          </div>
+          <h2>心知天气</h2>
+          <p class="key-card-summary">永久免费版覆盖国内 370 个主要城市，每次可查看未来 3 天预报。山峰会映射到附近城市，只适合作为短周期补充。</p>
+          <dl class="key-facts">
+            <div><dt>免费期限</dt><dd>永久</dd></div>
+            <div><dt>单次预报范围</dt><dd>未来 3 天</dd></div>
+            <div><dt>限额</dt><dd>10 万次 / 月</dd></div>
+          </dl>
+          <ol class="steps">
+            <li>打开心知天气价格页，选择“免费版”。</li>
+            <li>点击“立即申请”并注册账号。</li>
+            <li>按平台要求完成手机或实名验证。</li>
+            <li>在“产品管理 → 产品详情”复制<b>私钥 key</b>，不要填公钥 uid。</li>
+            <li>写入 <code>SENIVERSE_KEY=你的私钥key</code>。</li>
+          </ol>
+          <a class="key-link" href="https://www.seniverse.com/pricing" target="_blank" rel="noreferrer">去申请心知天气免费版</a>
+        </article>
+
+        <article class="key-card">
+          <div class="key-card-head">
+            <span class="rank">04 · 可选</span>
+            <span class="free-badge free-badge-warn">先确认无卡</span>
+          </div>
+          <h2>WeatherAPI.com</h2>
+          <p class="key-card-summary">注册后是 7 天 Business 试用，结束后自动转免费计划。免费计划每次可查看未来 3 天预报，每月 10 万次请求。</p>
+          <dl class="key-facts">
+            <div><dt>免费期限</dt><dd>试用后长期免费</dd></div>
+            <div><dt>单次预报范围</dt><dd>未来 3 天</dd></div>
+            <div><dt>限额</dt><dd>10 万次 / 月</dd></div>
+          </dl>
+          <ol class="steps">
+            <li>打开 WeatherAPI 注册页。</li>
+            <li>如果页面要求填写银行卡，立即停止。</li>
+            <li>注册后在 Dashboard 找到 API Key。</li>
+            <li>写入 <code>WEATHERAPI_KEY=你的Key</code>。</li>
+          </ol>
+          <a class="key-link" href="https://www.weatherapi.com/signup.aspx" target="_blank" rel="noreferrer">去查看 WeatherAPI 免费计划</a>
+        </article>
+      </section>
+
+      <section class="config-panel">
+        <div>
+          <p class="guide-eyebrow">LOCAL SETUP</p>
+          <h2>拿到 Key 后怎么给我</h2>
+          <p>不用发消息，也不用截图。Key 只保存在你电脑的本地文件里。</p>
+        </div>
+        <ol class="config-steps">
+          <li>
+            <span>01</span>
+            <div><strong>打开配置文件</strong><code>E:\Codex_Workspace\hiking\designs\hiking-weather-tool\.env</code></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><strong>只填值，不改字段名</strong><code>VISUAL_CROSSING_KEY=粘贴你的Key</code></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><strong>保存后重启服务</strong><code>node server.mjs</code></div>
+          </li>
+          <li>
+            <span>04</span>
+            <div><strong>刷新工具</strong><p>接口抽屉会显示“已配置 · 数据已接入”，对应平台会出现在天气对比表。</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="excluded-panel">
+        <p class="guide-eyebrow">EXCLUDED</p>
+        <h2>这些已经排除</h2>
+        <div class="excluded-grid">
+          <div><strong>和风天气</strong><span>当前官方定价为按量计费，不作为免费来源。</span></div>
+          <div><strong>彩云天气</strong><span>未确认稳定的长期免费额度。</span></div>
+          <div><strong>Tomorrow.io / Azure Maps</strong><span>免费额度不稳定或需要企业订阅。</span></div>
+          <div><strong>Apple WeatherKit</strong><span>需要付费的 Apple Developer 账号。</span></div>
+        </div>
+        <p class="guide-footnote">平台条款随时可能调整。如果注册页出现付款、银行卡或自动续费要求，请直接停止并告诉我。</p>
+      </section>
+    </main>
+  </body>
+</html>

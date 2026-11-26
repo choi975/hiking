@@ -1,0 +1,1448 @@
+@font-face {
+  font-family: "Manrope Lab";
+  src: url("./fonts/manrope-latin-variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk Lab";
+  src: url("./fonts/space-grotesk-latin-variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Lab";
+  src: url("./fonts/noto-sans-sc-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif Lab";
+  src: url("./fonts/noto-serif-sc-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ecece9;
+}
+
+body {
+  color: #191b1d;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+}
+
+.lab-toolbar {
+  position: fixed;
+  z-index: 500;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 10px 12px 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #f7f8f8;
+  background: rgba(17, 19, 20, 0.94);
+  box-shadow: 0 18px 60px rgba(20, 21, 23, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.lab-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.lab-heading strong {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.lab-heading span {
+  overflow: hidden;
+  color: rgba(247, 248, 248, 0.52);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lab-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.lab-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+  color: rgba(247, 248, 248, 0.72);
+  background: transparent;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.lab-action:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #fff;
+}
+
+.lab-action.active {
+  border-color: #f0ff64;
+  color: #121414;
+  background: #f0ff64;
+}
+
+.lab-action-tag {
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lab-status {
+  justify-self: end;
+  color: rgba(247, 248, 248, 0.58);
+  font-size: 10px;
+  text-align: right;
+}
+
+.lab-status strong {
+  color: #f0ff64;
+  font-weight: 650;
+}
+
+.lab-note {
+  position: fixed;
+  z-index: 450;
+  top: 20px;
+  right: 22px;
+  max-width: 330px;
+  padding: 11px 13px;
+  border: 1px solid rgba(26, 29, 31, 0.1);
+  border-radius: 10px;
+  color: #42484c;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 28px rgba(34, 38, 42, 0.12);
+  font-size: 10px;
+  line-height: 1.65;
+  backdrop-filter: blur(12px);
+}
+
+.lab-note strong {
+  color: #181b1d;
+  font-weight: 650;
+}
+
+.mock {
+  width: 800px;
+  height: 510px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.mock *,
+.mock *::before,
+.mock *::after {
+  box-sizing: border-box;
+}
+
+.mock button {
+  border: 0;
+}
+
+/* ─────────────────────────────────────────────
+   A · CLEAR SKY
+   Friendly, spacious, iOS-quality weather app
+   ───────────────────────────────────────────── */
+
+.opt-a {
+  --a-blue: #3478f6;
+  --a-blue-soft: #eaf2ff;
+  --a-ink: #152234;
+  --a-muted: #718096;
+  --a-line: #e5ebf2;
+  display: flex;
+  flex-direction: column;
+  color: var(--a-ink);
+  background:
+    radial-gradient(circle at 94% 4%, rgba(83, 157, 255, 0.17), transparent 31%),
+    #f5f8fc;
+  font-family: "Noto Sans Lab", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", sans-serif;
+}
+
+.a-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 54px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(89, 116, 145, 0.1);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.a-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 130px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.a-logo {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--a-blue);
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.a-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 330px;
+  height: 33px;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: #95a2b3;
+  background: #edf2f8;
+  font-size: 9px;
+}
+
+.a-search::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #8190a2;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 -3px #8190a2;
+}
+
+.a-city {
+  margin-left: auto;
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: var(--a-blue);
+  background: var(--a-blue-soft);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.a-shell {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.a-sidebar {
+  padding: 17px 12px;
+  border-right: 1px solid rgba(89, 116, 145, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.a-side-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7px 10px;
+  color: #8b98a9;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.a-place {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  padding: 10px 10px;
+  border-radius: 13px;
+  color: #4b5c71;
+}
+
+.a-place + .a-place {
+  margin-top: 4px;
+}
+
+.a-place.active {
+  color: #fff;
+  background: var(--a-blue);
+  box-shadow: 0 7px 20px rgba(52, 120, 246, 0.24);
+}
+
+.a-place strong {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.a-place span {
+  color: #8d9aac;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 8px;
+}
+
+.a-place.active span {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.a-place i {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: #b5c0cd;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.a-place.active i {
+  color: #fff;
+}
+
+.a-main {
+  min-width: 0;
+  padding: 18px 21px;
+}
+
+.a-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.a-kicker {
+  margin: 0 0 4px;
+  color: #8a98aa;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.a-hero h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.a-hero p {
+  margin: 7px 0 0;
+  color: #738195;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.a-temp {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.a-temp strong {
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 49px;
+  font-weight: 300;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+}
+
+.a-temp span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #66778c;
+  font-size: 9px;
+}
+
+.a-pills {
+  display: flex;
+  gap: 6px;
+  margin-top: 13px;
+}
+
+.a-pill {
+  padding: 5px 9px;
+  border-radius: 99px;
+  color: #607186;
+  background: #eaf0f7;
+  font-size: 8px;
+}
+
+.a-pill.good {
+  color: #227c58;
+  background: #e1f5ea;
+}
+
+.a-forecast {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.a-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 4px;
+  border: 1px solid #e6ecf3;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 12px rgba(63, 89, 119, 0.04);
+}
+
+.a-day.active {
+  border-color: var(--a-blue);
+  color: #fff;
+  background: var(--a-blue);
+  box-shadow: 0 8px 22px rgba(52, 120, 246, 0.23);
+}
+
+.a-day span {
+  color: #8d9aab;
+  font-size: 7px;
+}
+
+.a-day.active span {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.a-day strong {
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.a-day small {
+  color: #708096;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+}
+
+.a-day.active small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.a-panels {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 11px;
+  margin-top: 15px;
+}
+
+.a-card {
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #e4eaf2;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 22px rgba(63, 89, 119, 0.055);
+}
+
+.a-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  color: #33465c;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.a-card-title em {
+  color: #97a3b3;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.a-table {
+  display: grid;
+  grid-template-columns: 77px repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid #edf1f6;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.a-cell {
+  min-width: 0;
+  padding: 7px 7px;
+  border-right: 1px solid #edf1f6;
+  border-bottom: 1px solid #edf1f6;
+  color: #6b7c90;
+  font-size: 7px;
+}
+
+.a-cell:nth-child(4n) {
+  border-right: 0;
+}
+
+.a-cell:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+
+.a-cell.head {
+  color: #8d9aab;
+  background: #f7f9fc;
+}
+
+.a-cell.source {
+  color: #34475b;
+  font-weight: 600;
+}
+
+.a-cell b {
+  color: #1d2e42;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 9px;
+}
+
+.a-score {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.a-ring {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: conic-gradient(var(--a-blue) 86%, #e8eef6 0);
+}
+
+.a-ring::before {
+  content: "";
+  grid-area: 1 / 1;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.a-ring b {
+  z-index: 1;
+  grid-area: 1 / 1;
+  color: var(--a-blue);
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.a-score-copy strong {
+  display: block;
+  font-size: 11px;
+}
+
+.a-score-copy span {
+  display: block;
+  margin-top: 3px;
+  color: #7c8b9d;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.a-mini-stats {
+  display: flex;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.a-mini-stats span {
+  flex: 1;
+  padding: 5px 6px;
+  border-radius: 9px;
+  color: #7c8b9d;
+  background: #f5f8fc;
+  font-size: 7px;
+}
+
+.a-mini-stats b {
+  display: block;
+  margin-top: 1px;
+  color: #34485e;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 8px;
+}
+
+.a-choice {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  min-height: 32px;
+  padding: 0 13px;
+  border-radius: 10px;
+  color: #fff;
+  background: #152234;
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(21, 34, 52, 0.18);
+}
+
+.a-choice:hover {
+  background: var(--a-blue);
+}
+
+/* ─────────────────────────────────────────────
+   B · TRAIL INSTRUMENT
+   Contemporary outdoor ops panel
+   ───────────────────────────────────────────── */
+
+.opt-b {
+  --b-ink: #101417;
+  --b-grey: #8a969e;
+  --b-line: #d9dfe3;
+  --b-lime: #d9ff4a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--b-ink);
+  background: #f2f5f6;
+  font-family: "Noto Sans Lab", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", sans-serif;
+}
+
+.b-top {
+  display: flex;
+  align-items: stretch;
+  height: 49px;
+  color: #f4f6f7;
+  background: #101417;
+}
+
+.b-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 165px;
+  padding: 0 17px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.b-mark {
+  width: 20px;
+  height: 20px;
+  background: var(--b-lime);
+  clip-path: polygon(50% 0, 100% 100%, 62% 100%, 50% 66%, 38% 100%, 0 100%);
+}
+
+.b-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 19px;
+  color: rgba(244, 246, 247, 0.52);
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.b-nav .active {
+  color: var(--b-lime);
+}
+
+.b-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  padding: 0 18px;
+  color: rgba(244, 246, 247, 0.62);
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 8px;
+}
+
+.b-live::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--b-lime);
+  box-shadow: 0 0 0 4px rgba(217, 255, 74, 0.12);
+}
+
+.b-shell {
+  display: grid;
+  grid-template-columns: 164px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.b-side {
+  padding: 15px 11px;
+  border-right: 1px solid var(--b-line);
+  background: #e9edef;
+}
+
+.b-side-label {
+  padding: 0 7px 8px;
+  color: #77838b;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.b-place {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #54616a;
+  font-size: 9px;
+}
+
+.b-place + .b-place {
+  margin-top: 2px;
+}
+
+.b-place strong {
+  font-weight: 600;
+}
+
+.b-place small {
+  margin-left: auto;
+  color: #96a0a6;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+}
+
+.b-place.active {
+  border-color: #14191c;
+  color: #fff;
+  background: #14191c;
+}
+
+.b-place.active small {
+  color: var(--b-lime);
+}
+
+.b-place-dot {
+  width: 5px;
+  height: 5px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.b-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 18px;
+}
+
+.b-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.b-index {
+  color: #8c969c;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.b-header h1 {
+  margin: 4px 0 5px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+.b-header p {
+  margin: 0;
+  color: #7b878e;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.b-signal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border: 1px solid #11171a;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.b-signal b {
+  color: #101417;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 30px;
+  font-weight: 550;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.b-signal-copy strong {
+  display: block;
+  font-size: 9px;
+}
+
+.b-signal-copy span {
+  display: block;
+  margin-top: 2px;
+  color: #899299;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+}
+
+.b-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 14px;
+  border: 1px solid var(--b-line);
+  background: #fff;
+}
+
+.b-day {
+  position: relative;
+  min-height: 65px;
+  padding: 9px 8px;
+  border-right: 1px solid var(--b-line);
+}
+
+.b-day:last-child {
+  border-right: 0;
+}
+
+.b-day.active {
+  color: #111417;
+  background: var(--b-lime);
+}
+
+.b-day span {
+  color: #8a959b;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.b-day.active span {
+  color: #4f5a10;
+}
+
+.b-day strong {
+  display: block;
+  margin-top: 9px;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.b-day small {
+  display: block;
+  margin-top: 2px;
+  color: #7f8b92;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+}
+
+.b-day.active small {
+  color: #596417;
+}
+
+.b-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 11px;
+  margin-top: 12px;
+}
+
+.b-panel {
+  border: 1px solid var(--b-line);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.b-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--b-line);
+  color: #536068;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.b-panel-head span {
+  color: #98a1a6;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+}
+
+.b-matrix {
+  display: grid;
+  grid-template-columns: 92px repeat(4, 1fr);
+}
+
+.b-cell {
+  min-width: 0;
+  padding: 7px 8px;
+  border-right: 1px solid #e7ebed;
+  border-bottom: 1px solid #e7ebed;
+  font-size: 7px;
+}
+
+.b-cell:nth-child(5n) {
+  border-right: 0;
+}
+
+.b-cell:nth-last-child(-n + 5) {
+  border-bottom: 0;
+}
+
+.b-cell.head {
+  color: #909a9f;
+  background: #f7f9fa;
+}
+
+.b-cell.source {
+  color: #263138;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-weight: 600;
+}
+
+.b-cell b {
+  color: #111417;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 9px;
+  font-weight: 550;
+}
+
+.b-cell em {
+  color: #7d8990;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 6px;
+  font-style: normal;
+}
+
+.b-conditions {
+  padding: 10px;
+}
+
+.b-condition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid #e9edef;
+  font-size: 7px;
+}
+
+.b-condition:last-child {
+  border-bottom: 0;
+}
+
+.b-condition span {
+  color: #7b868d;
+}
+
+.b-condition strong {
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.b-condition.danger strong {
+  color: #cf493c;
+}
+
+.b-window-note {
+  display: grid;
+  grid-template-columns: 78px 112px minmax(0, 1fr) 67px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 9px 10px;
+  border-top: 1px solid #11171a;
+  border-bottom: 1px solid var(--b-line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.b-window-note span {
+  color: #7e898f;
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+
+.b-window-note strong {
+  font-family: "Space Grotesk Lab", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.b-window-note p {
+  margin: 0;
+  overflow: hidden;
+  color: #6d787f;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.b-meter {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.b-meter i {
+  flex: 1;
+  height: 45%;
+  background: #bcc5ca;
+}
+
+.b-meter i:nth-child(2) {
+  height: 70%;
+}
+
+.b-meter i:nth-child(3) {
+  height: 100%;
+  background: var(--b-lime);
+}
+
+.b-meter i:nth-child(4) {
+  height: 68%;
+}
+
+.b-meter i:nth-child(5) {
+  height: 36%;
+}
+
+.b-choice {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  min-height: 31px;
+  padding: 0 12px;
+  border-radius: 5px;
+  color: #111417;
+  background: var(--b-lime);
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.b-choice:hover {
+  background: #c7ef30;
+}
+
+/* ─────────────────────────────────────────────
+   C · FIELD EDITORIAL
+   Quiet, typographic, magazine-like weather ledger
+   ───────────────────────────────────────────── */
+
+.opt-c {
+  --c-ink: #171717;
+  --c-red: #ef5b3f;
+  --c-grey: #737373;
+  --c-line: #d9d9d9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--c-ink);
+  background: #fff;
+  font-family: "Noto Sans Lab", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", sans-serif;
+}
+
+.c-top {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--c-ink);
+}
+
+.c-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.c-brand strong {
+  font-family: "Noto Serif Lab", "Songti SC", serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.c-brand span {
+  color: #8e8e8e;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 6px;
+  letter-spacing: 0.18em;
+}
+
+.c-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: #7a7a7a;
+  font-size: 8px;
+}
+
+.c-nav .active {
+  color: var(--c-ink);
+}
+
+.c-topmeta {
+  margin-left: auto;
+  color: #7b7b7b;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.06em;
+}
+
+.c-body {
+  display: grid;
+  grid-template-columns: 264px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.c-intro {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 22px 17px;
+  border-right: 1px solid var(--c-line);
+}
+
+.c-edition {
+  color: #818181;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.c-intro h1 {
+  margin: 12px 0 12px;
+  font-family: "Noto Serif Lab", "Songti SC", "SimSun", serif;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.03;
+}
+
+.c-intro h1 span {
+  display: block;
+  color: var(--c-red);
+}
+
+.c-intro p {
+  margin: 0;
+  color: #656565;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.c-loc {
+  display: flex;
+  gap: 17px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-line);
+}
+
+.c-loc span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #777;
+  font-size: 7px;
+}
+
+.c-loc b {
+  color: var(--c-ink);
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.c-verdict {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--c-ink);
+}
+
+.c-verdict b {
+  color: var(--c-red);
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 31px;
+  font-weight: 350;
+  letter-spacing: -0.06em;
+}
+
+.c-verdict span {
+  color: #565656;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.c-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 19px 22px;
+}
+
+.c-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.c-section-head h2 {
+  margin: 0;
+  font-family: "Noto Serif Lab", "Songti SC", serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.c-section-head span {
+  color: #7a7a7a;
+  font-size: 7px;
+}
+
+.c-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 13px;
+  border-top: 1px solid var(--c-ink);
+  border-bottom: 1px solid var(--c-line);
+}
+
+.c-day {
+  min-height: 84px;
+  padding: 10px 8px;
+  border-right: 1px solid var(--c-line);
+}
+
+.c-day:last-child {
+  border-right: 0;
+}
+
+.c-day.active {
+  color: #fff;
+  background: var(--c-ink);
+}
+
+.c-day span {
+  color: #7d7d7d;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+}
+
+.c-day.active span {
+  color: #b8b8b8;
+}
+
+.c-day strong {
+  display: block;
+  margin-top: 9px;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.c-day small {
+  display: block;
+  margin-top: 5px;
+  color: #6f6f6f;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 7px;
+}
+
+.c-day.active small {
+  color: #a5a5a5;
+}
+
+.c-ledger {
+  margin-top: 13px;
+}
+
+.c-ledger-head,
+.c-ledger-row {
+  display: grid;
+  grid-template-columns: 105px repeat(4, 1fr);
+}
+
+.c-ledger-head {
+  color: #8a8a8a;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 6px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.c-ledger-head span,
+.c-ledger-row span {
+  padding: 6px 7px;
+  border-bottom: 1px solid #ededed;
+}
+
+.c-ledger-row {
+  font-size: 7px;
+}
+
+.c-ledger-row strong {
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 9px;
+  font-weight: 550;
+}
+
+.c-ledger-row em {
+  color: #8c8c8c;
+  font-family: "Manrope Lab", sans-serif;
+  font-size: 6px;
+  font-style: normal;
+}
+
+.c-footnote {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--c-ink);
+}
+
+.c-note b {
+  display: block;
+  margin-bottom: 3px;
+  font-family: "Noto Serif Lab", "Songti SC", serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.c-note span {
+  color: #707070;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.c-choice {
+  position: absolute;
+  right: 19px;
+  bottom: 16px;
+  min-height: 31px;
+  padding: 0 12px;
+  border-radius: 2px;
+  color: #fff;
+  background: var(--c-red);
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.c-choice:hover {
+  background: #d7462d;
+}
+
+@media (max-width: 720px) {
+  .lab-toolbar {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .lab-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lab-action {
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  .lab-status {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .lab-note {
+    display: none;
+  }
+}
